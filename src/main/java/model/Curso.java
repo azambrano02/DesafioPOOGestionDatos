@@ -35,7 +35,27 @@ public class Curso {
 			this.estudiantes.add(estudiante);
 		}
 	}
-	public boolean estudianteExiste(String rut){
-		
+	public boolean estudianteExiste(Estudiante estudiante){
+		for(Estudiante e : this.estudiantes){
+			if(estudiante.getRut().equals(e.getRut())){
+				System.out.println("El estudiante se encuentra en el curso");
+				return true;
+			}
+		}return false;
+	}
+	public Estudiante buscarEstudiante(String rut) {
+		for(Estudiante estudiante : this.estudiantes){
+			if(estudiante.getRut().equals(rut)){
+				return estudiante;
+			}
+		}
+		return null;
+	}
+
+	public void mostrarEstudiantes(List<Estudiante> estudiantes) {
+		throw new UnsupportedOperationException();
+	}
+	public void eliminarEstudiante(Estudiante estudiante) {
+		throw new UnsupportedOperationException();
 	}
 }
