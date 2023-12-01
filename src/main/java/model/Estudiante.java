@@ -4,7 +4,6 @@ public class Estudiante {
 	private String nombre;
 	private String email;
 	private String rut;
-	private Curso curso;
 
 	public String getNombre() {
 		return this.nombre;
@@ -24,17 +23,15 @@ public class Estudiante {
 	public void setRut(String rut) {
 		this.rut = rut;
 	}
-	public Curso getCurso() {
-		return curso;
-	}
-	public void setCurso(Curso curso) {
-		this.curso = curso;
+
+	@Override
+	public String toString() {
+		return "Nombre: " +nombre+ "\n Email: " + email +"\n Rut: " + rut + "\n" ;
 	}
 
-	public Estudiante(String nombre, String email, String rut, Curso curso) {
+	public Estudiante(String nombre, String email, String rut) {
 		this.nombre = nombre;
 		this.email = email;
 		this.rut = rut;
-		this.curso = curso;
 	}
 }

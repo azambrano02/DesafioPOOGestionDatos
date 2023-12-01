@@ -46,16 +46,22 @@ public class Curso {
 	public Estudiante buscarEstudiante(String rut) {
 		for(Estudiante estudiante : this.estudiantes){
 			if(estudiante.getRut().equals(rut)){
+				System.out.println("El estudiante: " +estudiante.getNombre()+"está en el curso");
 				return estudiante;
 			}
 		}
+		System.out.println("El estudiante no se encuentra en el curso");
 		return null;
 	}
-
 	public void mostrarEstudiantes(List<Estudiante> estudiantes) {
-		throw new UnsupportedOperationException();
+		for (int i = 0; i < estudiantes.size(); i++) {
+			System.out.println(estudiantes.toString());
+		}
 	}
-	public void eliminarEstudiante(Estudiante estudiante) {
-		throw new UnsupportedOperationException();
+	public void eliminarEstudiante(String rut) {
+		Estudiante estudiante = this.buscarEstudiante(rut);
+		if(estudiante != null){
+			this.estudiantes.remove(estudiante);
+		}
 	}
 }
